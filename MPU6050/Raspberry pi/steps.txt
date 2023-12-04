@@ -1,0 +1,6 @@
+1-Go to Raspberry pi configuration -> Open the iterfaces tab -> 
+Check the I2C section to on
+
+2- Execute the I2C detect command (i2cdetect -y l) 
+
+3- Run the python file (python filename.py) 
