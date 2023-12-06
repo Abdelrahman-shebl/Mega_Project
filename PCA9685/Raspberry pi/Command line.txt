@@ -1,1 +1,26 @@
-Sudo pip3 install adafruit-circuitpython-servokit
+steps:
+
+Enable I2C on the Raspberry Pi:
+
+Open the Raspberry Pi configuration file by running the command: sudo raspi-config
+Navigate to "Interfacing Options" and select "I2C."
+Choose "Yes" to enable the I2C interface.
+Reboot the Raspberry Pi for the changes to take effect.
+Connect the PCA9685 to the Raspberry Pi:
+
+Connect the VCC pin of the PCA9685 to the 3.3V power supply on the Raspberry Pi.
+Connect the GND pin of the PCA9685 to any ground pin on the Raspberry Pi.
+Connect the SDA pin of the PCA9685 to the SDA pin (GPIO 2) on the Raspberry Pi.
+Connect the SCL pin of the PCA9685 to the SCL pin (GPIO 3) on the Raspberry Pi.
+Optionally, connect an external power supply to the V+ and GND pins of the PCA9685 if you require more power for your devices.
+Install the required software libraries:
+
+Open a terminal on the Raspberry Pi.
+Run the following command to install the required Python libraries:
+Copy
+sudo apt-get update
+sudo apt-get install python3-smbus
+sudo apt-get install i2c-tools
+Verify the I2C connection:
+
+Run the command sudo i2cdetect -y 1 to check if the PCA9685 is detected. You should see its address (0x40 by default) listed on the grid.
